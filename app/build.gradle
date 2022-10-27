@@ -23,9 +23,15 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "API_URL", "\"https://my.api.mockaroo.com/\""
+            buildConfigField "String", "API_KEY", "\"cb03b960\""
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_URL", "\"https://my.api.mockaroo.com/\""
+            buildConfigField "String", "API_KEY", "\"cb03b960\""
         }
     }
     compileOptions {
