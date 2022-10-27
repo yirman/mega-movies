@@ -1,5 +1,10 @@
 <resources>
-    <string name="app_name">Mega Movies</string>
+    <string name="app_name">Cinemapp</string>
     <string name="stars">Actores: %1$s</string>
     <string name="watch_trailer">Ver trailer</string>
+    <string name="granted_permissions">Todos los permisos concedidos</string>
+    <string name="denied_permissions">Permisos denegados: %s</string>
+    <string name="permissions_required">Permisos requeridos</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
 </resources>
