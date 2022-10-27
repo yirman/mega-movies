@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/carouselsFragment">
+
+    <fragment
+        android:id="@+id/carouselsFragment"
+        android:name="com.ionix.megamovies.ui.fragment.MovieCarouselFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_carousels" >
+
+        <action
+            android:id="@+id/action_carouselsFragment_to_movieInfoFragment"
+            app:destination="@id/movieInfoFragment" />
+
+    </fragment>
+
+
+    <dialog
+        android:id="@+id/movieInfoFragment"
+        android:label="@string/app_name"
+        android:name="com.ionix.megamovies.ui.fragment.MovieInfoFragment"
+        tools:layout="@layout/fragment_movie_info" />
+
+
+</navigation>
