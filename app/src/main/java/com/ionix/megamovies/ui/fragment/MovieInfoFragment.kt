@@ -1,13 +1,16 @@
 package com.ionix.megamovies.ui.fragment
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.FrameLayout
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.signature.ObjectKey
@@ -15,8 +18,10 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ionix.megamovies.R
+import com.ionix.megamovies.data.entities.Movie
 import com.ionix.megamovies.data.entities.parseDate
 import com.ionix.megamovies.databinding.FragmentMovieInfoBinding
+import com.ionix.megamovies.ui.activity.MoviePlayerActivity
 import com.ionix.megamovies.ui.viewmodel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -67,10 +72,9 @@ class MovieInfoFragment : BottomSheetDialogFragment() {
 
 
         binding.btnTrailer.setOnClickListener {
-//            findNavController().navigate(
-//                R.id.action_movieInfoFragment_to_moviePlayerFragment,
-//                bundleOf("id" to idMovie)
-//            )
+            val intent = Intent(requireActivity(), MoviePlayerActivity::class.java)
+            intent.putExtra("video_url", Movie.SAMPLE_VIDEO)
+            startActivity(intent)
         }
     }
     private fun setupObservers(){

@@ -21,7 +21,12 @@ data class Movie constructor(
 	@SerializedName("directors") var directors : String? = null,
 	@SerializedName("stars") var stars : String? = null,
 	@SerializedName("genreList") @Ignore var genreList : List<Genre>? = null
-)
+){
+	companion object {
+		val SAMPLE_VIDEO = "https://d11gqohmu80ljn.cloudfront.net/128/media-20210712191955-cbdi-0.m3u8/master.m3u8"
+	}
+}
+
 
 @SuppressLint("SimpleDateFormat")
 fun Movie.parseDate(): String?{
