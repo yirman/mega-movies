@@ -62,11 +62,12 @@ class MovieCarouselFragment : Fragment(), CarouselAdapter.MovieHandler {
                     binding.swipeRefresh.isRefreshing = false
                     if (!it.data.isNullOrEmpty()) {
                         adapter.setItems(ArrayList(it.data))
-                        adapter.notifyDataSetChanged()
                         binding.tvNoData.visibility = View.GONE
                     } else {
+                        adapter.setItems(emptyList())
                         binding.tvNoData.visibility = View.VISIBLE
                     }
+                    adapter.notifyDataSetChanged()
                 }
 
                 Resource.Status.ERROR -> {
