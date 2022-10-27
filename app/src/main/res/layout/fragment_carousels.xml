@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:gravity="center"
-        android:text=""
+        android:text="@string/content_not_available"
         android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
